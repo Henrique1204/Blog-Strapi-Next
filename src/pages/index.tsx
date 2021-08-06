@@ -1,23 +1,12 @@
 import React from 'react';
 import { GetStaticProps } from 'next';
-import { PostsData } from './domain/posts/post';
-
-const getPosts = async (): Promise<PostsData[]> => {
-  const url = 'https://desolate-retreat-97406.herokuapp.com/posts';
-  const posts = await fetch(url);
-  const postsJson = await posts.json();
-
-  return postsJson;
-};
-
-type PropsHome = {
-  posts: PostsData[];
-};
+import getAllPosts from '../data/posts/get-all-posts';
+import HomePage, { PropsHome } from '../containers/HomePage';
 
 export const getStaticProps: GetStaticProps = async (): Promise<{
   props: PropsHome;
 }> => {
-  const posts = await getPosts();
+  const posts = await getAllPosts();
 
   return {
     props: {
@@ -27,9 +16,7 @@ export const getStaticProps: GetStaticProps = async (): Promise<{
 };
 
 const Home = ({ posts }: PropsHome) => {
-  return (
-    <>{posts && posts.map(({ title, slug }) => <h2 key={slug}>{title}</h2>)}</>
-  );
+  return <HomePage posts={posts}></HomePage>;
 };
 
 export default Home;
