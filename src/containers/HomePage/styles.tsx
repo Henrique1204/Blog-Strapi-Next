@@ -1,5 +1,3 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  background: #f00;
-`;
+export const Container = styled.div``;
