@@ -3,6 +3,7 @@ import React from 'react';
 import { PostsData } from '../../domain/posts/post';
 
 import Header from '../../components/Header';
+import MainContainer from '../../components/MainContainer';
 
 import { Container } from './styles';
 
@@ -14,9 +15,12 @@ const HomePage = ({ posts }: PropsHome) => {
   return (
     <>
       <Header />
-      <Container>
-        {posts && posts.map(({ title, slug }) => <h2 key={slug}>{title}</h2>)}
-      </Container>
+
+      <MainContainer>
+        <Container>
+          {posts && posts.map(({ title, slug }) => <h2 key={slug}>{title}</h2>)}
+        </Container>
+      </MainContainer>
     </>
   );
 };
