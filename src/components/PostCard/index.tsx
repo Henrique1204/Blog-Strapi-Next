@@ -22,7 +22,7 @@ const PostCard = ({ slug, title, cover }: PostCardProps) => {
       </PostCardCover>
 
       <PostCardHeading>
-        <Link href="/post/[slug]" as={`/posts/${slug}`}>
+        <Link href="/post/[slug]" as={`/post/${slug}`}>
           <a>{title}</a>
         </Link>
       </PostCardHeading>

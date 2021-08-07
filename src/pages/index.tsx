@@ -8,11 +8,7 @@ export const getStaticProps: GetStaticProps = async (): Promise<{
 }> => {
   const posts = await getAllPosts('_sort=id:desc&_start=0&_limit=30');
 
-  return {
-    props: {
-      posts,
-    },
-  };
+  return { props: { posts } };
 };
 
 const Home = ({ posts }: PropsHome) => {
