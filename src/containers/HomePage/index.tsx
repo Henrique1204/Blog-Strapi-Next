@@ -4,9 +4,10 @@ import { PostsData } from '../../domain/posts/post';
 
 import Header from '../../components/Header';
 import MainContainer from '../../components/MainContainer';
+import PostCard from '../../components/PostCard';
+import Footer from '../../components/Footer';
 
 import { Container } from './styled';
-import PostCard from '../../components/PostCard';
 
 export type PropsHome = {
   posts: PostsData[];
@@ -29,6 +30,8 @@ const HomePage = ({ posts }: PropsHome) => {
           ))}
         </Container>
       </MainContainer>
+
+      <Footer />
     </>
   );
 };
