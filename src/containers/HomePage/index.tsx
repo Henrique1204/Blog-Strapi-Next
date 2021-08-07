@@ -5,7 +5,7 @@ import { PostsData } from '../../domain/posts/post';
 import Header from '../../components/Header';
 import MainContainer from '../../components/MainContainer';
 
-import { Container } from './styles';
+import { Container } from './styled';
 
 export type PropsHome = {
   posts: PostsData[];
