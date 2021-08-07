@@ -6,6 +6,7 @@ import Header from '../../components/Header';
 import MainContainer from '../../components/MainContainer';
 
 import { Container } from './styled';
+import PostCard from '../../components/PostCard';
 
 export type PropsHome = {
   posts: PostsData[];
@@ -18,7 +19,14 @@ const HomePage = ({ posts }: PropsHome) => {
 
       <MainContainer>
         <Container>
-          {posts && posts.map(({ title, slug }) => <h2 key={slug}>{title}</h2>)}
+          {posts.map(({ title, slug, cover }) => (
+            <PostCard
+              key={slug}
+              slug={slug}
+              title={title}
+              cover={cover.formats.small.url}
+            />
+          ))}
         </Container>
       </MainContainer>
     </>
