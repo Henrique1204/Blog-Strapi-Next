@@ -8,6 +8,8 @@ import Footer from '../../components/Footer';
 import { PostsData } from '../../domain/posts/post';
 import PostCover from '../../components/PostCover';
 import PostDetails from '../../components/PostDetails';
+// import PostContainer from '../../components/PostContainer';
+import Comments from '../../Comments';
 
 export type PostProps = {
   post: PostsData;
@@ -29,7 +31,9 @@ const Post = ({ post }: PostProps) => {
           date={post.created_at}
         />
 
-        {/* <div dangerouslySetInnerHTML={{ __html: post.content }}></div> */}
+        {/* <PostContainer __html={post.content} /> */}
+
+        <Comments slug={post.slug} title={post.title} />
       </MainContainer>
 
       <Footer />
