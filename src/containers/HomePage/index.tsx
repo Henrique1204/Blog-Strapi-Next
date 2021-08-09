@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { PostsData } from '../../domain/posts/post';
+import Head from 'next/head';
 
 import Header from '../../components/Header';
 import MainContainer from '../../components/MainContainer';
@@ -9,6 +9,10 @@ import Footer from '../../components/Footer';
 
 import { Container } from './styled';
 
+import { PostsData } from '../../domain/posts/post';
+
+import { SITE_NAME } from '../../config/app.config';
+
 export type PropsHome = {
   posts: PostsData[];
 };
@@ -16,6 +20,11 @@ export type PropsHome = {
 const HomePage = ({ posts }: PropsHome) => {
   return (
     <>
+      <Head>
+        <title>{SITE_NAME}</title>
+        <meta name="description" content="Este é meu blog de tecnologia." />
+      </Head>
+
       <Header />
 
       <MainContainer>
