@@ -2,7 +2,7 @@ import React from 'react';
 
 import { DiscussionEmbed } from 'disqus-react';
 import { Container } from './styled';
-import { SITE_URL } from '../config/app.config';
+import { SITE_URL } from '../../config/app.config';
 
 type CommentsProps = {
   slug: string;
