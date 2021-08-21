@@ -7,7 +7,7 @@ import MainContainer from '../../components/MainContainer';
 import PostCard from '../../components/PostCard';
 import Footer from '../../components/Footer';
 
-import { Container } from './styled';
+import { Category, Container } from './styled';
 
 import { PostsData } from '../../domain/posts/post';
 
@@ -15,9 +15,10 @@ import { SITE_NAME } from '../../config/app.config';
 
 export type PropsHome = {
   posts: PostsData[];
+  category?: string | string[];
 };
 
-const HomePage = ({ posts }: PropsHome) => {
+const HomePage = ({ posts, category }: PropsHome) => {
   return (
     <>
       <Head>
@@ -28,6 +29,8 @@ const HomePage = ({ posts }: PropsHome) => {
       <Header />
 
       <MainContainer>
+        {category && <Category>Categoria: {category}</Category>}
+
         <Container>
           {posts.map(({ title, slug, cover }) => (
             <PostCard
