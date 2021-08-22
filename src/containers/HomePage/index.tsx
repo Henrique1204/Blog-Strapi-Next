@@ -22,7 +22,7 @@ const HomePage = ({ posts, category }: PropsHome) => {
   return (
     <>
       <Head>
-        <title>{SITE_NAME}</title>
+        <title>{category ? `${category} - ${SITE_NAME}` : SITE_NAME}</title>
         <meta name="description" content="Este é meu blog de tecnologia." />
       </Head>
 
