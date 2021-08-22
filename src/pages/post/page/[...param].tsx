@@ -46,7 +46,13 @@ const Page = ({ posts, category, pagination }: PropsHome) => {
   if (router.isFallback) return <div>Carregando...</div>;
   if (!posts.length) return <div>Página não encontrada...</div>;
 
-  return <HomePage posts={posts}></HomePage>;
+  return (
+    <HomePage
+      posts={posts}
+      category={category}
+      pagination={pagination}
+    ></HomePage>
+  );
 };
 
 export default Page;

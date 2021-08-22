@@ -13,6 +13,7 @@ import { PostsData } from '../../domain/posts/post';
 
 import { SITE_NAME } from '../../config/app.config';
 import { PaginationData } from '../../domain/posts/pagination';
+import Pagination from '../../components/Pagination';
 
 export type PropsHome = {
   posts: PostsData[];
@@ -20,7 +21,7 @@ export type PropsHome = {
   pagination?: PaginationData;
 };
 
-const HomePage = ({ posts, category }: PropsHome) => {
+const HomePage = ({ posts, category, pagination }: PropsHome) => {
   return (
     <>
       <Head>
@@ -43,6 +44,8 @@ const HomePage = ({ posts, category }: PropsHome) => {
             />
           ))}
         </Container>
+
+        {pagination && <Pagination {...pagination} />}
       </MainContainer>
 
       <Footer />
