@@ -12,10 +12,12 @@ import { Category, Container } from './styled';
 import { PostsData } from '../../domain/posts/post';
 
 import { SITE_NAME } from '../../config/app.config';
+import { PaginationData } from '../../domain/posts/pagination';
 
 export type PropsHome = {
   posts: PostsData[];
   category?: string | string[];
+  pagination?: PaginationData;
 };
 
 const HomePage = ({ posts, category }: PropsHome) => {
